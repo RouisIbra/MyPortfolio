@@ -1,10 +1,14 @@
 import React from "react";
+import MyAppBar from "./components/MyAppBar";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <MyAppBar />
+      <main>
+        <h1>Welcome!</h1>
+      </main>
+    </>
   );
 }
 
