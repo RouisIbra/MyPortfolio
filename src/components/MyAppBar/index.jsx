@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CodeIcon from "@mui/icons-material/Code";
+import ThemeTogglerIconButton from "../ThemeTogglerIconButton";
 
 const pages = [
   { id: "home", label: "Home" },
@@ -41,10 +42,7 @@ function MyAppBar() {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      sx={{ backgroundColor: "#1B262C", color: "#BBE1FA" }}
-    >
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Page icon for md+ screen */}
@@ -57,8 +55,7 @@ function MyAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component="h1"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -66,7 +63,6 @@ function MyAppBar() {
               fontWeight: 700,
               letterSpacing: ".2rem",
               color: "inherit",
-              textDecoration: "none",
             }}
           >
             {title}
@@ -117,10 +113,9 @@ function MyAppBar() {
 
           {/* Page title for xs- screen */}
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component="h1"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -149,14 +144,13 @@ function MyAppBar() {
                 onClick={() => handleGoToSection(page.id)}
                 sx={{
                   my: 2,
-                  color: "#BBE1FA",
+                  color: "inherit",
                   display: "block",
                   textUnderlineOffset: 6,
                   textDecorationLine:
                     page.id === selectedPage ? "underline" : "none",
                   textDecorationThickness: page.id === selectedPage ? 5 : 2,
                   "&:hover": {
-                    color: "#3282B8",
                     textDecorationLine: "underline",
                     textDecorationThickness: page.id === selectedPage ? 5 : 2,
                   },
@@ -166,6 +160,7 @@ function MyAppBar() {
               </Button>
             ))}
           </Box>
+          <ThemeTogglerIconButton fixed />
         </Toolbar>
       </Container>
     </AppBar>
