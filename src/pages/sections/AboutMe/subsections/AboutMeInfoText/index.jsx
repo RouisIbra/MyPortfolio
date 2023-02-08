@@ -15,7 +15,11 @@ function AboutMeInfoText() {
       <Typography variant="subtitle1" fontWeight="500" color="info">
         Full stack web and mobile developer
       </Typography>
-      <Typography variant="body1" sx={{ mt: 2, textAlign: "justify" }}>
+      <Typography
+        variant="body1"
+        fontWeight={500}
+        sx={{ mt: 2, textAlign: "justify" }}
+      >
         I am a Full-Stack developer from Tunisia. I am studying Software
         Engineering at EPI Digital School. I am very passiotate about
         programming in general. I build Mobile Apps using Flutter, Web Apps

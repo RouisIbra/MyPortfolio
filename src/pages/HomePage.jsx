@@ -7,6 +7,7 @@ import { loadFull } from "tsparticles";
 import particlesOptions from "../config/particlesOptions";
 import ThemeMode from "../context/ThemeMode";
 import AboutMe from "./sections/AboutMe";
+import SkillsSection from "./sections/SkillsSection";
 
 function HomePage() {
   const [particlesContainer, setParticlesContainer] = useState(null);
@@ -41,6 +42,7 @@ function HomePage() {
       <Container maxWidth="xl" component="main">
         <HeaderSection />
         <AboutMe />
+        <SkillsSection />
       </Container>
     </>
   );
