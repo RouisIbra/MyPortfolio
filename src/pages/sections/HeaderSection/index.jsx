@@ -1,18 +1,20 @@
-import { Grid, useMediaQuery } from "@mui/material";
 import React from "react";
+import { Grid } from "@mui/material";
 import MyAvatar from "./subsections/MyAvatar";
 import MyIntro from "./subsections/MyIntro";
 
 function HeaderSection() {
   return (
-    <section>
+    <section
+      id="header"
+      style={{ height: "92vh", display: "flex", alignItems: "center" }}
+    >
       <Grid
         container
         justifyContent="center"
         alignItems="center"
         direction={{ xs: "column-reverse", md: "row" }}
         spacing={4}
-        my={4}
       >
         <Grid item container direction="column" xs={12} md={6}>
           <MyIntro />

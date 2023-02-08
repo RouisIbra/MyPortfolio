@@ -1,64 +1,51 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 
+const greeting = "Hi There,";
+const name = "Ibrahim Rouis";
+const IamInto = "Web development";
+
 function MyIntro() {
   return (
-    <>
-      <Grid item>
-        <Typography
-          variant="h3"
-          component="p"
-          sx={{ textAlign: { xs: "center", md: "left" } }}
-        >
-          Hi There,
+    <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+      <Typography variant="h3" component="p">
+        {greeting}
+      </Typography>
+      <Typography variant="h4" component="p">
+        I&apos;m{" "}
+        <Typography variant="h3" component="span" color="secondary">
+          {name}
         </Typography>
-      </Grid>
-      <Grid item>
+      </Typography>
+      <Typography variant="h5" component="p" sx={{ mt: 4 }}>
+        I am into{" "}
         <Typography
-          variant="h4"
-          component="p"
-          sx={{ textAlign: { xs: "center", md: "left" } }}
+          variant="h6"
+          component="span"
+          sx={(theme) => ({
+            color:
+              theme.palette.mode === "dark"
+                ? theme.palette.warning.main
+                : theme.palette.info.main,
+          })}
         >
-          I&apos;m{" "}
-          <Typography variant="h3" component="span" color="secondary">
-            Ibrahim Rouis
-          </Typography>
+          {IamInto}
         </Typography>
-      </Grid>
-      <Grid item>
-        <Typography
-          variant="h5"
-          component="p"
-          sx={{ textAlign: { xs: "center", md: "left" }, mt: 4 }}
-        >
-          I am into{" "}
-          <Typography
-            variant="h6"
-            component="span"
-            sx={(theme) => ({
-              color:
-                theme.palette.mode === "dark"
-                  ? theme.palette.warning.main
-                  : theme.palette.info.main,
-            })}
-          >
-            Web development
-          </Typography>
-        </Typography>
-      </Grid>
-      <Grid
-        item
-        container
-        justifyContent={{ xs: "center", md: "flex-start" }}
-        mt={2}
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: { xs: "center", md: "flex-start" },
+          mt: 2,
+        }}
       >
-        <Button variant="contained">
+        <Button variant="contained" href="#aboutMe">
           About me
           <ExpandCircleDownIcon sx={{ ml: 1 }} />
         </Button>
-      </Grid>
-    </>
+      </Box>
+    </Box>
   );
 }
 
