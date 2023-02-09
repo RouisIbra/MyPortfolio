@@ -1,8 +1,27 @@
 import React from "react";
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button, useMediaQuery } from "@mui/material";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import * as Scroll from "react-scroll";
+import { motion } from "framer-motion";
+import { useTheme } from "@emotion/react";
 
+const textVariant = {
+  hide: { opacity: 0, x: -30 },
+  show: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: 0.5 + i * 0.1, duration: 1 },
+  }),
+};
+
+const buttonVariant = {
+  hide: { opacity: 0, y: -10 },
+  show: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 1 + i * 0.1, duration: 0.5 },
+  }),
+};
 function AboutMeInfoText() {
   const scrollToSkills = () => {
     Scroll.scroller.scrollTo("skills", {
@@ -12,17 +31,26 @@ function AboutMeInfoText() {
       offset: -70,
     });
   };
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <>
       <Typography
         variant="h4"
-        component="h3"
+        component={motion.h3}
+        variants={textVariant}
+        custom={3}
         color="secondary"
         fontWeight="bold"
       >
         I&apos;m Ibrahim
       </Typography>
       <Typography
+        component={motion.h5}
+        variants={textVariant}
+        custom={4}
         sx={{ typography: { xs: "subtitle1", xl: "h6" } }}
         fontWeight="500"
         color="info"
@@ -30,6 +58,9 @@ function AboutMeInfoText() {
         Full stack web and mobile developer
       </Typography>
       <Typography
+        component={motion.p}
+        variants={textVariant}
+        custom={5}
         sx={{
           mt: 2,
           textAlign: { xs: "justify", md: "left" },
@@ -43,15 +74,39 @@ function AboutMeInfoText() {
       </Typography>
       <Grid container spacing={2} mt={{ xs: 2, md: 4 }}>
         <Grid item xs={12} md={6} component="p">
-          <Typography variant="h5" component="span" color="secondary">
+          <Typography
+            variant="h5"
+            component={motion.span}
+            variants={textVariant}
+            custom={6}
+            color="secondary"
+          >
             Email:{" "}
           </Typography>
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component={motion.span}
+            variants={textVariant}
+            custom={7}
+          >
             Ibrahim.Rouis@gmail.com
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} component="p">
-          <Typography variant="h5" component="span" color="secondary">
+        <Grid
+          item
+          xs={12}
+          md={6}
+          component={motion.span}
+          variants={textVariant}
+          custom={8}
+        >
+          <Typography
+            variant="h5"
+            component={motion.span}
+            variants={textVariant}
+            custom={9}
+            color="secondary"
+          >
             Phone:{" "}
           </Typography>
           <Typography variant="h6" component="span">
@@ -59,26 +114,63 @@ function AboutMeInfoText() {
           </Typography>
         </Grid>
         <Grid item xs={12} md={6} component="p">
-          <Typography variant="h5" component="span" color="secondary">
+          <Typography
+            variant="h5"
+            component={motion.span}
+            variants={textVariant}
+            custom={11}
+            color="secondary"
+          >
             Age:{" "}
           </Typography>
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component={motion.span}
+            variants={textVariant}
+            custom={12}
+          >
             25
           </Typography>
         </Grid>
         <Grid item xs={12} md={6} component="p">
-          <Typography variant="h5" component="span" color="secondary">
+          <Typography
+            variant="h5"
+            component={motion.span}
+            variants={textVariant}
+            custom={13}
+            color="secondary"
+          >
             Place:{" "}
           </Typography>
-          <Typography variant="h6" component="span">
+          <Typography
+            variant="h6"
+            component={motion.span}
+            variants={textVariant}
+            custom={14}
+          >
             Tunisia, Sousse
           </Typography>
         </Grid>
       </Grid>
-      <Button variant="contained" onClick={scrollToSkills} sx={{ mt: 2 }}>
-        Show more
-        <ExpandCircleDownIcon sx={{ ml: 1 }} />
-      </Button>
+
+      {matches && (
+        <Button
+          variant="contained"
+          onClick={scrollToSkills}
+          sx={{
+            mt: 2,
+            position: "absolute",
+            bottom: 0,
+            left: 35,
+          }}
+          component={motion.button}
+          variants={buttonVariant}
+          custom={15}
+        >
+          Show Skills
+          <ExpandCircleDownIcon sx={{ ml: 1 }} />
+        </Button>
+      )}
     </>
   );
 }

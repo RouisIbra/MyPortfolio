@@ -40,7 +40,7 @@ function HomePage() {
         loaded={particlesLoaded}
       />
       <MyAppBar />
-      <Container maxWidth="xl" component="main">
+      <Container maxWidth="xl" component="main" id="home">
         <HeaderSection />
         <AboutMe />
         <SkillsSection />

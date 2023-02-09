@@ -8,10 +8,23 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
-function CollegeCard({ title, description, years, imgsrc }) {
+const cardVariant = {
+  hide: { opacity: 0, x: -100 },
+  show: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.5, duration: 1, ease: "easeOut" },
+  }),
+};
+
+function CollegeCard({ title, description, years, imgsrc, animeOrder }) {
   return (
     <Card
+      component={motion.div}
+      variants={cardVariant}
+      custom={animeOrder}
       elevation={3}
       sx={(theme) => ({
         borderRadius: 10,
@@ -60,6 +73,7 @@ CollegeCard.propTypes = {
   description: PropTypes.string,
   years: PropTypes.string,
   imgsrc: PropTypes.any.isRequired,
+  animeOrder: PropTypes.number,
 };
 
 export default CollegeCard;

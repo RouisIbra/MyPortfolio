@@ -8,14 +8,27 @@ import {
 } from "@mui/material";
 import PropTypes from "prop-types";
 import { useTheme } from "@emotion/react";
+import { motion } from "framer-motion";
 
-function SkillCard({ icon, title, color }) {
+const cardVariant = {
+  hide: { opacity: 0, x: -10 },
+  show: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+  }),
+};
+
+function SkillCard({ icon, title, color, animeOrder }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Grid item xs="auto" zIndex={1}>
       <Card
+        component={motion.div}
+        variants={cardVariant}
+        custom={animeOrder}
         elevation={3}
         sx={{
           display: "flex",
@@ -42,6 +55,7 @@ SkillCard.propTypes = {
   icon: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  animeOrder: PropTypes.number,
 };
 
 export default SkillCard;

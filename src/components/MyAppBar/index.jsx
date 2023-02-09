@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import CodeIcon from "@mui/icons-material/Code";
 import ThemeTogglerIconButton from "../ThemeTogglerIconButton";
+import * as Scroll from "react-scroll";
 
 const pages = [
   { id: "home", label: "Home" },
@@ -34,7 +35,11 @@ function MyAppBar() {
   };
 
   const handleGoToSection = (pageId) => {
-    // TODO: Scroll to section with animation
+    Scroll.scroller.scrollTo(pageId, {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+    });
     setSelectedPage(pageId);
     if (anchorElNav != null) {
       handleCloseNavMenu();

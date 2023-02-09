@@ -6,7 +6,7 @@ import MyIntro from "./subsections/MyIntro";
 function HeaderSection() {
   return (
     <section
-      id="header"
+      id=""
       style={{ height: "92vh", display: "flex", alignItems: "center" }}
     >
       <Grid
