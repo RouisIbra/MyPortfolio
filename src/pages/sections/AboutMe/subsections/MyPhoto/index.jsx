@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card } from "@mui/material";
+import { Box } from "@mui/material";
 import myPortraitPhoto from "../../../../../assets/portrait-photo.webp";
 import Tilt from "react-parallax-tilt";
 

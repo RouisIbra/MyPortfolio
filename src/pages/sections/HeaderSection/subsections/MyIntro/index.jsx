@@ -1,12 +1,21 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
+import { Box, Button, Typography } from "@mui/material";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
+import * as Scroll from "react-scroll";
 
 const greeting = "Hi There,";
 const name = "Ibrahim Rouis";
 const IamInto = "Web development";
 
 function MyIntro() {
+  const scrollToAboutMe = () => {
+    Scroll.scroller.scrollTo("aboutMe", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+    });
+  };
+
   return (
     <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
       <Typography variant="h3" component="p">
@@ -40,7 +49,7 @@ function MyIntro() {
           mt: 2,
         }}
       >
-        <Button variant="contained" href="#aboutMe">
+        <Button variant="contained" onClick={scrollToAboutMe}>
           About me
           <ExpandCircleDownIcon sx={{ ml: 1 }} />
         </Button>

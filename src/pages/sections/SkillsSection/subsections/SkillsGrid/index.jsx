@@ -17,7 +17,6 @@ import {
   Mysql,
   Nodedotjs,
   Php,
-  Prisma,
   ReactJs,
   Redux,
   Sqlite,
@@ -44,6 +43,7 @@ function SkillsGrid() {
       <SkillCard title="Firebase" icon={Firebase} color="#FFCA28" />
       <SkillCard title="HTML" icon={Html5} color="#E34F26" />
       <SkillCard title="CSS" icon={CssThree} color="#1572B6" />
+      <SkillCard title="MUI" icon={Mui} color="#007FFF" />
       <SkillCard title="Redux" icon={Redux} color="#764ABC" />
       <SkillCard title="Dart" icon={Dart} color="#0175C2" />
       <SkillCard title="MySQL" icon={Mysql} color="#4479A1" />

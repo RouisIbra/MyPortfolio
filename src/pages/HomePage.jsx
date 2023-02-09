@@ -8,6 +8,7 @@ import particlesOptions from "../config/particlesOptions";
 import ThemeMode from "../context/ThemeMode";
 import AboutMe from "./sections/AboutMe";
 import SkillsSection from "./sections/SkillsSection";
+import EducationSection from "./sections/EducationSection";
 
 function HomePage() {
   const [particlesContainer, setParticlesContainer] = useState(null);
@@ -43,6 +44,7 @@ function HomePage() {
         <HeaderSection />
         <AboutMe />
         <SkillsSection />
+        <EducationSection />
       </Container>
     </>
   );

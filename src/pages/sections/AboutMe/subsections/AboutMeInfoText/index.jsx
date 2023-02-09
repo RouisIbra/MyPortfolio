@@ -1,7 +1,17 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
+import * as Scroll from "react-scroll";
 
 function AboutMeInfoText() {
+  const scrollToSkills = () => {
+    Scroll.scroller.scrollTo("skills", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+      offset: -70,
+    });
+  };
   return (
     <>
       <Typography
@@ -12,18 +22,24 @@ function AboutMeInfoText() {
       >
         I&apos;m Ibrahim
       </Typography>
-      <Typography variant="subtitle1" fontWeight="500" color="info">
+      <Typography
+        sx={{ typography: { xs: "subtitle1", xl: "h6" } }}
+        fontWeight="500"
+        color="info"
+      >
         Full stack web and mobile developer
       </Typography>
       <Typography
-        variant="body1"
-        fontWeight={500}
-        sx={{ mt: 2, textAlign: "justify" }}
+        sx={{
+          mt: 2,
+          textAlign: { xs: "justify", md: "left" },
+          typography: { xs: "body1", xl: { fontSize: "1.25rem" } },
+        }}
       >
         I am a Full-Stack developer from Tunisia. I am studying Software
-        Engineering at EPI Digital School. I am very passiotate about
-        programming in general. I build Mobile Apps using Flutter, Web Apps
-        using ReactJs and Backend servers using NodeJs.
+        Engineering at International Multidisciplinary School. I am very
+        passiotate about programming in general. I build Mobile Apps using
+        Flutter, Web Apps using ReactJs and Backend servers using NodeJs.
       </Typography>
       <Grid container spacing={2} mt={{ xs: 2, md: 4 }}>
         <Grid item xs={12} md={6} component="p">
@@ -59,6 +75,10 @@ function AboutMeInfoText() {
           </Typography>
         </Grid>
       </Grid>
+      <Button variant="contained" onClick={scrollToSkills} sx={{ mt: 2 }}>
+        Show more
+        <ExpandCircleDownIcon sx={{ ml: 1 }} />
+      </Button>
     </>
   );
 }

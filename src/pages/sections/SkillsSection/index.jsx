@@ -9,9 +9,8 @@ function SkillsSection() {
       component="section"
       id="skills"
       sx={{
-        minHeight: "100vh",
-        pt: { xs: 12, md: 0 },
-        px: { xs: 4, xl: 0 },
+        pt: 4,
+        px: { xs: 2, xl: 0 },
       }}
     >
       <Grid container spacing={2} mb={4}>

@@ -11,7 +11,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "no-unused-vars": "off"
+    "no-unused-vars": "warn"
   },
   "settings": {
     "react": {
