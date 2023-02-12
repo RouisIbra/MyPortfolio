@@ -3,6 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 import * as Scroll from "react-scroll";
 import { motion } from "framer-motion";
+import ReactTypingEffect from "react-typing-effect";
 
 const greeting = "Hi There,";
 const name = "Ibrahim Rouis";
@@ -54,23 +55,23 @@ function MyIntro() {
         variant="h5"
         component={motion.p}
         variants={textVariant}
+        typingDelay={2}
         initial="hide"
         whileInView="show"
         sx={{ mt: 4 }}
       >
         I am into{" "}
         <Typography
+          text={IamInto}
+          component={ReactTypingEffect}
           variant="h6"
-          component="span"
           sx={(theme) => ({
             color:
               theme.palette.mode === "dark"
                 ? theme.palette.warning.main
                 : theme.palette.info.main,
           })}
-        >
-          {IamInto}
-        </Typography>
+        />
       </Typography>
       <Box
         sx={{

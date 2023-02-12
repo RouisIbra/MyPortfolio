@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import myPortraitPhoto from "../../../../../assets/portrait-photo.webp";
+import myPortraitPhoto from "../../../../../assets/portrait-photo.jpg";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
