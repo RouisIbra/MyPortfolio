@@ -15,7 +15,7 @@ const cardVariant = {
   show: (i) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: i * 0.3, duration: 0.5, ease: "easeOut" },
+    transition: { delay: i * 0.2, duration: 0.5, ease: "easeOut" },
   }),
   hover: { scale: 1.1 },
 };

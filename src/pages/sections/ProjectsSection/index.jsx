@@ -63,8 +63,9 @@ const ProjectsSection = () => {
           <Grid item zIndex={1}>
             <ProjectCard
               title="My Portfolio"
-              description="This portfolio that you are watching right now is built and designed by me using ReactJS, MaterialUI, Framer Motion and other useful libraries."
+              description="This portfolio that you are watching right now is built and designed fully by me using ReactJS, Material UI, Framer Motion and other useful libraries."
               srcImage={PortfolioImage}
+              srcLink="https://github.com/RouisIbra/MyPortfolio"
               animeOrder={1}
             />
           </Grid>
@@ -73,6 +74,7 @@ const ProjectsSection = () => {
               title="Authentication API"
               description="I built a fast and secure Authentication API from scratch using Node.JS and Express. It has all the essential features for a fully functional API"
               srcImage={RestApiImage}
+              srcLink="https://github.com/RouisIbra/express-auth"
               animeOrder={2}
             />
           </Grid>
@@ -81,14 +83,16 @@ const ProjectsSection = () => {
               title="Flutter Authetication Client"
               description="I built a Mobile App client for my Authentication API using flutter. I have also added Unit Testing for the authentication client"
               srcImage={FlutterImage}
+              srcLink="https://github.com/RouisIbra/flutter_auth_app"
               animeOrder={3}
             />
           </Grid>
           <Grid item zIndex={1}>
             <ProjectCard
-              title="Pets App"
-              description="I built a beautiful Flutter application for my college exam project that consist of making  a pets adoption app"
+              title="Pets Adoption App"
+              description="I built a beautiful Flutter application that includes smooth animations. This was for my college exam project that consist of making a pets adoption app"
               srcImage={FlutterImage}
+              srcLink="https://github.com/RouisIbra/Flutter-Exam-Project"
               animeOrder={4}
             />
           </Grid>

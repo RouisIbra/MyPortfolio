@@ -70,7 +70,13 @@ function ProjectCard({
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <IconButton component="a" size="large" href={srcLink} sx={{ mr: 1 }}>
+        <IconButton
+          component="a"
+          target="_blank"
+          size="large"
+          href={srcLink}
+          sx={{ mr: 1 }}
+        >
           <GitHubIcon color="inherit" fontSize="200%" />
         </IconButton>
       </CardActions>
