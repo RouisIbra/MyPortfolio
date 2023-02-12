@@ -1,8 +1,10 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import SkillsIcon from "@mui/icons-material/ImportantDevices";
 import SkillsGrid from "./subsections/SkillsGrid";
 import { motion } from "framer-motion";
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
+import * as Scroll from "react-scroll";
 
 const textVariant = {
   hide: { opacity: 0, y: -10, transition: { when: "afterChildren" } },
@@ -17,13 +19,35 @@ const textVariant = {
   }),
 };
 
+const buttonVariant = {
+  hide: { opacity: 0, y: -15 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeIn",
+      delay: 1,
+      duration: 1,
+    },
+  },
+};
+
 function SkillsSection() {
+  const scrollToEdu = () => {
+    Scroll.scroller.scrollTo("education", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+      offset: -70,
+    });
+  };
   return (
     <Box
       component="section"
       id="skills"
       sx={{
         minHeight: "100vh",
+        marginBottom: "3rem",
         display: "flex",
         pt: { xs: 10, md: 0 },
         px: { xs: 4, xl: 0 },
@@ -54,6 +78,20 @@ function SkillsSection() {
             <SkillsGrid />
           </Grid>
         </Grid>
+        <Box
+          sx={{ display: { xs: "none", md: "flex" }, justifyContent: "center" }}
+        >
+          <Button
+            variant="contained"
+            component={motion.button}
+            variants={buttonVariant}
+            size="large"
+            onClick={scrollToEdu}
+            endIcon={<ExpandCircleDownIcon />}
+          >
+            Show Eduction
+          </Button>
+        </Box>
       </motion.div>
     </Box>
   );

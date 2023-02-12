@@ -15,8 +15,9 @@ const cardVariant = {
   show: (i) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+    transition: { delay: i * 0.3, duration: 0.5, ease: "easeOut" },
   }),
+  hover: { scale: 1.1 },
 };
 
 function SkillCard({ icon, title, color, animeOrder }) {
@@ -37,6 +38,9 @@ function SkillCard({ icon, title, color, animeOrder }) {
           p: 2,
           width: { xs: 100, sm: 150 },
           backgroundColor: theme.palette.mode === "dark" ? "#111e" : "#eeee",
+          "&:hover": {
+            backgroundColor: theme.palette.mode === "dark" ? "#111" : "#eee",
+          },
         }}
       >
         <CardMedia

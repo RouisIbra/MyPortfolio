@@ -19,7 +19,7 @@ const buttonVariant = {
   show: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 1 + i * 0.1, duration: 0.5 },
+    transition: { delay: i * 0.1, duration: 0.5 },
   }),
 };
 function AboutMeInfoText() {
@@ -166,9 +166,9 @@ function AboutMeInfoText() {
           component={motion.button}
           variants={buttonVariant}
           custom={15}
+          endIcon={<ExpandCircleDownIcon />}
         >
           Show Skills
-          <ExpandCircleDownIcon sx={{ ml: 1 }} />
         </Button>
       )}
     </>

@@ -1,10 +1,12 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import EduIcon from "@mui/icons-material/School";
 import CollegeCard from "../../../components/CollegeCard";
 import epiimagesrc from "../../../assets/epi.jpg";
 import ipeimimagesrc from "../../../assets/ipeim.jpg";
 import { motion } from "framer-motion";
+import * as Scroll from "react-scroll";
+import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
 
 const textVariant = {
   hide: { opacity: 0, y: -10, transition: { when: "afterChildren" } },
@@ -19,14 +21,39 @@ const textVariant = {
   }),
 };
 
+const buttonVariant = {
+  hide: { opacity: 0, y: -15 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeIn",
+      delay: 1,
+      duration: 1,
+    },
+  },
+};
+
 function EducationSection() {
+  const scrollToProjects = () => {
+    Scroll.scroller.scrollTo("projects", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+      offset: 0,
+    });
+  };
   return (
     <Box
       component="section"
       id="education"
       sx={{
-        py: { xs: 12, md: 5 },
-        px: { xs: 2, xl: 0 },
+        minHeight: "100vh",
+        display: "flex",
+        pt: { xs: 10, md: 0 },
+        pb: { xs: 0, md: 5 },
+        px: { xs: 4, xl: 0 },
+        alignItems: { xs: "flex-start", md: "center" },
       }}
     >
       <motion.div initial="hide" whileInView="show">
@@ -63,6 +90,20 @@ function EducationSection() {
             />
           </Grid>
         </Grid>
+        <Box
+          sx={{ display: { xs: "none", md: "flex" }, justifyContent: "center" }}
+        >
+          <Button
+            variant="contained"
+            component={motion.button}
+            variants={buttonVariant}
+            size="large"
+            onClick={scrollToProjects}
+            endIcon={<ExpandCircleDownIcon />}
+          >
+            Show Projects
+          </Button>
+        </Box>
       </motion.div>
     </Box>
   );

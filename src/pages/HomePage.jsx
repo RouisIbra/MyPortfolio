@@ -9,6 +9,7 @@ import ThemeMode from "../context/ThemeMode";
 import AboutMe from "./sections/AboutMe";
 import SkillsSection from "./sections/SkillsSection";
 import EducationSection from "./sections/EducationSection";
+import ProjectsSection from "./sections/ProjectsSection";
 
 function HomePage() {
   const [particlesContainer, setParticlesContainer] = useState(null);
@@ -45,6 +46,7 @@ function HomePage() {
         <AboutMe />
         <SkillsSection />
         <EducationSection />
+        <ProjectsSection />
       </Container>
     </>
   );

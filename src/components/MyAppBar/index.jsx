@@ -18,7 +18,7 @@ const pages = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+  { id: "projects", label: "Projects" },
 ];
 const title = "Ibrahim Rouis";
 

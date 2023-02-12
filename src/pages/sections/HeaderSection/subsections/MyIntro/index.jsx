@@ -87,9 +87,9 @@ function MyIntro() {
             variants={buttonVariant}
             initial="hide"
             whileInView="show"
+            endIcon={<ExpandCircleDownIcon />}
           >
             About me
-            <ExpandCircleDownIcon sx={{ ml: 1 }} />
           </Button>
         </motion.div>
       </Box>

@@ -17,6 +17,7 @@ const cardVariant = {
     x: 0,
     transition: { delay: i * 0.5, duration: 1, ease: "easeOut" },
   }),
+  hover: { scale: 1.1 },
 };
 
 function CollegeCard({ title, description, years, imgsrc, animeOrder }) {
@@ -35,14 +36,17 @@ function CollegeCard({ title, description, years, imgsrc, animeOrder }) {
         alignItems: { xs: "center", sm: "stretch" },
         justifyContent: "center",
         backgroundColor: theme.palette.mode === "dark" ? "#111e" : "#eeee",
+        "&:hover": {
+          backgroundColor: theme.palette.mode === "dark" ? "#111" : "#eee",
+        },
       })}
     >
       <CardMedia
         src={imgsrc}
         component="img"
         sx={{
-          height: { xs: 200, sm: 250 },
-          width: { xs: 200, sm: 250 },
+          height: { xs: 150, sm: 200 },
+          width: { xs: 150, sm: 200 },
           borderRadius: 10,
         }}
       />
