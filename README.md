@@ -15,10 +15,4 @@ This website is hosted on Apache server on AWS EC2 instance with custom SSL CA s
 
 ## Screenshots
 
-![Header Section](screenshots/sc1.JPG)
-
 ![Skills Section](screenshots/sc3.JPG)
-
-## Light mode
-
-![Header Section light mode](screenshots/sc4.JPG)
